@@ -6,7 +6,31 @@
         xmlns:local="clr-namespace:snelsteAtlet"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="5"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="auto" MinWidth="226"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <WrapPanel Grid.Row="0" Grid.Column="0" Margin="0,0,0,26" Grid.RowSpan="2">
+            <Label Content="Naam atleet:" MinWidth="150"/>
+            <TextBox x:Name="nameTextBox" TextWrapping="Wrap" Width="120"/>
+        </WrapPanel>
+        <WrapPanel Grid.Row="1" Grid.Column = "0" Margin="0,0,0,5" Grid.RowSpan="2">
+            <Label Content="Totaal aantal seconden:" MinWidth="150"/>
+            <TextBox x:Name="secondsTextBox" TextWrapping="Wrap" Width="120"/>
+        </WrapPanel>
+        <TextBox Grid.Row="3" Grid.Column="0" VerticalScrollBarVisibility="Visible" IsReadOnly="True" x:Name="resultTextBox" TextWrapping="Wrap" Text="" Background="#FFEAE5E5" FontFamily="Consolas" FontSize="18" IsEnabled="False" Margin="50,112,98,31"/>
+        <StackPanel Grid.Row="3" Grid.Column="1" Margin="20,10,10,20">
+            <Button x:Name="newButton" Content="Nieuwe" FontFamily="Consola" FontSize="20" Padding="5" Margin="0 0 0 5" IsDefault="True" Click="newButton_Click" />
+            <Button x:Name="fastestButton_" Content="Snelste atleet" FontFamily="Consola" FontSize="20" Padding="5" Margin="0 0 0 5" IsCancel="True" Click="fastestButton__Click" />
+            <Button x:Name="clearButton" Content="Wissen" FontFamily="Consola" FontSize="20" Padding="5" Margin="0 0 0 5" Click="clearButton_Click"/>
+            <Button x:Name="closeButton_" Content="_Afsluiten" FontFamily="Consola" FontSize="20" Padding="5" Click="BtnAfsluiten_Click" />
+        </StackPanel>
     </Grid>
 </Window>
